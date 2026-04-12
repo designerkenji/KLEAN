@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>KLEAN — Restroom Reviews, Reinvented</title>
+  <title>KLEAN WC — Restroom Reviews, Reinvented</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Epilogue:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -34,7 +34,7 @@
 
     /* ── NAV ───────────────────────────────────── */
     nav {
-      /* position: fixed; top: 0; left: 0; right: 0; z-index: 100; */
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       display: flex; align-items: center; justify-content: space-between;
       padding: 18px 48px;
       background: rgba(255,255,255,0.88);
@@ -49,30 +49,6 @@
       text-decoration: none;
     }
     .nav-logo span { color: var(--mint); }
-    nav ul {
-      list-style: none;
-      display: none;
-      flex-direction: column;
-      position: fixed; top: 64px; left: 48px;
-      min-width: 200px;
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 6px;
-      box-shadow: 0 12px 40px rgba(10,22,40,0.12);
-      z-index: 99;
-    }
-    nav ul.open { display: flex; }
-    nav ul a {
-      font-family: 'Syne', sans-serif;
-      font-size: 0.88rem; font-weight: 600;
-      letter-spacing: 0.04em; text-transform: uppercase;
-      color: var(--slate); text-decoration: none;
-      display: block; padding: 11px 18px;
-      border-radius: 8px;
-      transition: color .15s, background .15s;
-    }
-    nav ul a:hover { color: var(--mint-dk); background: var(--mint-lt); }
 
     /* ── HERO ──────────────────────────────────── */
     .hero {
@@ -301,112 +277,7 @@
       color: var(--slate);
     }
 
-    /* ── PRIVACY POLICY ───────────────────────── */
-    #privacy {
-      padding: 100px 80px;
-      background: var(--white);
-    }
-    .policy-wrap {
-      display: grid;
-      grid-template-columns: 280px 1fr;
-      gap: 80px;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-    .policy-sidebar { position: sticky; top: 100px; height: fit-content; }
-    .policy-sidebar h3 {
-      font-family: 'Syne', sans-serif;
-      font-size: 0.75rem; font-weight: 700;
-      letter-spacing: 0.1em; text-transform: uppercase;
-      color: var(--mint-dk); margin-bottom: 16px;
-    }
-    .policy-sidebar nav ul {
-      display: flex; flex-direction: column; gap: 4px;
-    }
-    .policy-sidebar nav ul a {
-      font-size: 0.85rem; font-weight: 400;
-      color: var(--slate); text-decoration: none;
-      padding: 6px 10px; border-radius: 6px;
-      transition: background .15s, color .15s;
-      display: block;
-      text-transform: none; letter-spacing: 0;
-    }
-    .policy-sidebar nav ul a:hover {
-      background: var(--mint-lt); color: var(--mint-dk);
-    }
-
-    .policy-content { max-width: 700px; }
-    .policy-content .policy-header { margin-bottom: 48px; }
-    .policy-content .policy-header h2 {
-      font-family: 'Syne', sans-serif;
-      font-size: clamp(2rem, 3vw, 2.6rem);
-      font-weight: 800; letter-spacing: -0.03em;
-      color: var(--navy); margin-bottom: 12px;
-    }
-    .policy-meta {
-      font-size: 0.82rem; color: var(--slate);
-    }
-    .policy-meta strong { color: var(--navy); }
-    .policy-intro {
-      background: var(--mint-lt);
-      border-left: 4px solid var(--mint);
-      border-radius: 0 10px 10px 0;
-      padding: 18px 22px;
-      font-size: 0.92rem; line-height: 1.65;
-      color: var(--slate);
-      margin-bottom: 48px;
-    }
-
-    .policy-section { margin-bottom: 44px; scroll-margin-top: 100px; }
-    .policy-section h3 {
-      font-family: 'Syne', sans-serif;
-      font-size: 1.2rem; font-weight: 700;
-      color: var(--navy);
-      padding-bottom: 10px;
-      border-bottom: 1px solid var(--border);
-      margin-bottom: 18px;
-    }
-    .policy-section p {
-      font-size: 0.93rem; line-height: 1.75;
-      color: var(--slate); margin-bottom: 14px;
-    }
-    .policy-section p:last-child { margin-bottom: 0; }
-    .policy-list {
-      list-style: none;
-      display: flex; flex-direction: column; gap: 10px;
-      margin: 10px 0 14px;
-    }
-    .policy-list li {
-      display: flex; gap: 12px; align-items: flex-start;
-      font-size: 0.93rem; line-height: 1.65; color: var(--slate);
-    }
-    .policy-list li::before {
-      content: '→';
-      color: var(--mint);
-      font-weight: 700; flex-shrink: 0;
-      margin-top: 1px;
-    }
-    .highlight-box {
-      background: #fef9ec;
-      border: 1px solid #f0d87a;
-      border-radius: 10px;
-      padding: 16px 20px;
-      font-size: 0.88rem; line-height: 1.65; color: #6b5700;
-      margin: 14px 0;
-    }
-    .contact-box {
-      background: var(--navy);
-      border-radius: var(--radius);
-      padding: 28px 32px;
-      margin-top: 16px;
-    }
-    .contact-box p {
-      color: rgba(255,255,255,0.7) !important;
-    }
-    .contact-box a {
-      color: var(--mint); text-decoration: none; font-weight: 500;
-    }
-    .contact-box a:hover { text-decoration: underline; }
+    
 
     /* ── FOOTER ────────────────────────────────── */
     footer {
@@ -432,26 +303,9 @@
       font-size: 0.78rem; color: rgba(255,255,255,0.35);
     }
 
-    /* ── HAMBURGER ─────────────────────────────── */
-    .nav-toggle {
-      display: flex;
-      flex-direction: column; justify-content: center; gap: 5px;
-      width: 36px; height: 36px;
-      background: none; border: none; cursor: pointer; padding: 4px;
-    }
-    .nav-toggle span {
-      display: block; height: 2px; width: 100%;
-      background: var(--navy); border-radius: 2px;
-      transition: transform .25s, opacity .25s;
-    }
-    .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    .nav-toggle.open span:nth-child(2) { opacity: 0; }
-    .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
     /* ── RESPONSIVE ────────────────────────────── */
     @media (max-width: 900px) {
       nav { padding: 16px 24px; }
-      nav ul { left: 16px; top: 60px; }
       .hero { grid-template-columns: 1fr; padding: 120px 28px 60px; gap: 48px; }
       .hero-visual { order: -1; }
       .features { padding: 70px 28px; }
@@ -468,47 +322,20 @@
 
   <!-- NAV -->
   <nav>
-    <button class="nav-toggle" aria-label="Toggle menu" id="navToggle" style="display:none;">
-      <span></span><span></span><span></span>
-    </button>
-    <a class="nav-logo" href="#top">KL<span>E</span>AN</a>
-    <ul id="navMenu">
-      <li><a href="#features">Features</a></li>
-      <li><a href="#privacy">Privacy Policy</a></li>
-    </ul>
+    <a class="nav-logo" href="#top">KL<span>E</span>AN WC</a>
   </nav>
-
-  <script>
-    const toggle = document.getElementById('navToggle');
-    const menu   = document.getElementById('navMenu');
-    toggle.addEventListener('click', (e) => {
-      e.stopPropagation();
-      toggle.classList.toggle('open');
-      menu.classList.toggle('open');
-    });
-    // close on link click
-    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-      toggle.classList.remove('open');
-      menu.classList.remove('open');
-    }));
-    // close on outside click
-    document.addEventListener('click', () => {
-      toggle.classList.remove('open');
-      menu.classList.remove('open');
-    });
-  </script>
 
   <!-- HERO -->
   <section class="hero" id="top">
     <div class="hero-text">
-      <div class="hero-badge">Now available on the App Store</div>
+      <div class="hero-badge">Coming Soon to the App Store</div>
       <h1>Find <span class="accent">clean</span><br>restrooms,<br>anywhere.</h1>
       <p class="hero-sub">
         KLEAN lets you discover, rate, and review restrooms near you — powered by real people, real photos, and real-time location.
       </p>
-      <a href="#" class="btn-primary">
+      <a href="#" class="btn-primary btn-soon" onclick="return false;" style="opacity:0.55;cursor:not-allowed;">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-        Download on the App Store
+        Coming Soon on the App Store
       </a>
     </div>
 
@@ -569,160 +396,13 @@
     </div>
   </section>
 
-  <!-- PRIVACY POLICY -->
-  <section id="privacy">
-    <div class="policy-wrap">
-
-      <!-- Sidebar TOC -->
-      <aside class="policy-sidebar">
-        <h3>On this page</h3>
-        <nav>
-          <ul>
-            <li><a href="#pp-intro">1. Introduction</a></li>
-            <li><a href="#pp-collect">2. Data Collection</a></li>
-            <li><a href="#pp-use">3. Use of Data</a></li>
-            <li><a href="#pp-cookies">4. Cookies &amp; Tracking</a></li>
-            <li><a href="#pp-third">5. Third-Party Services</a></li>
-            <li><a href="#pp-share">6. Data Sharing</a></li>
-            <li><a href="#pp-protection">7. Data Protection</a></li>
-            <li><a href="#pp-rights">8. User Rights</a></li>
-            <li><a href="#pp-changes">9. Policy Updates</a></li>
-            <li><a href="#pp-contact">10. Contact Us</a></li>
-          </ul>
-        </nav>
-      </aside>
-
-      <!-- Policy Body -->
-      <div class="policy-content">
-        <div class="policy-header">
-          <h2>Privacy Policy</h2>
-          <p class="policy-meta">
-            <strong>Last Updated:</strong> April 3, 2026 &nbsp;&middot;&nbsp;
-            <strong>App:</strong> KLEAN &mdash; Restroom Reviews
-          </p>
-        </div>
-
-        <div class="policy-intro">
-          At KLEAN, we prioritize the privacy of our users. This Privacy Policy outlines the types of information we collect, how we use it, and the steps we take to protect that information. By using our app, you agree to the terms outlined below.
-        </div>
-
-        <!-- 1 -->
-        <div class="policy-section" id="pp-intro">
-          <h3>1. Introduction</h3>
-          <p>KLEAN ("we," "us," or "our") is an iOS application that enables users to discover, rate, and photograph public restrooms. To deliver core features &mdash; such as surfacing restrooms near you and allowing photo-backed reviews &mdash; KLEAN requests access to your device's GPS location and camera.</p>
-          <p>We are committed to handling your data responsibly, limiting collection to only what is necessary, and never selling your personal information to third parties.</p>
-        </div>
-
-        <!-- 2 -->
-        <div class="policy-section" id="pp-collect">
-          <h3>2. Data Collection</h3>
-          <p>When you visit or use KLEAN, we may collect and process the following types of data:</p>
-          <ul class="policy-list">
-            <li><strong>Contact Information:</strong> If you sign in using Google authentication, we collect your name and email address for account creation and management.</li>
-            <li><strong>Location Data:</strong> If you choose to search by location or submit a review, we collect your precise GPS coordinates to show relevant nearby restroom results and to geotag your review. Location is accessed only while the app is in use (foreground) unless you explicitly grant "Always On" permission.</li>
-            <li><strong>Photos:</strong> If you add a photo to your review, we request access to your device camera. Photos are captured in-app and uploaded with your review. We do not access your existing photo library unless you choose to select an existing image.</li>
-            <li><strong>Review Content:</strong> Text descriptions, star ratings, cleanliness scores, and other content you voluntarily submit when posting a review.</li>
-            <li><strong>Search Data:</strong> We log search queries to understand which locations are being searched most frequently. This data may be associated with your user account if you are logged in.</li>
-            <li><strong>Usage Data:</strong> Information about your interactions with the app &mdash; such as features used, screens visited, and app usage patterns &mdash; collected to improve our service.</li>
-            <li><strong>Identifiers:</strong> We collect user IDs (generated upon account creation) and device IDs to manage accounts and provide a consistent experience.</li>
-          </ul>
-        </div>
-
-        <!-- 3 -->
-        <div class="policy-section" id="pp-use">
-          <h3>3. Use of Data</h3>
-          <p>We use the data we collect to:</p>
-          <ul class="policy-list">
-            <li>Provide and improve our services, including location-based restroom discovery and reviews.</li>
-            <li>Enhance user experience by tailoring features based on search trends and user behavior.</li>
-            <li>Maintain the security and functionality of our platform.</li>
-            <li>Comply with legal obligations and prevent misuse of our services.</li>
-          </ul>
-          <p>We do not use your location data for advertising, behavioral profiling, or any purpose unrelated to core app functionality.</p>
-        </div>
-
-        <!-- 4 -->
-        <div class="policy-section" id="pp-cookies">
-          <h3>4. Cookies &amp; Tracking</h3>
-          <p>We use cookies and similar technologies to:</p>
-          <ul class="policy-list">
-            <li>Ensure the proper functionality of search and filter features within the app.</li>
-            <li>Analyze traffic and usage patterns using privacy-friendly analytics that do not collect personally identifiable data or use persistent cookies.</li>
-          </ul>
-          <div class="highlight-box">
-            💡 You can disable cookies in your device or browser settings, but some features of the app may not function properly as a result.
-          </div>
-        </div>
-
-        <!-- 5 -->
-        <div class="policy-section" id="pp-third">
-          <h3>5. Third-Party Services</h3>
-          <p>We work with third-party services to operate and improve the app:</p>
-          <ul class="policy-list">
-            <li><strong>Supabase:</strong> Provides database, storage, and authentication services to manage user accounts and app data. Supabase is GDPR-compliant and prioritizes data security.</li>
-            <li><strong>Google Auth:</strong> If you use Google to sign in, we collect your name and email address for account creation and management.</li>
-            <li><strong>Analytics:</strong> Used to analyze aggregate traffic and usage patterns without collecting personal data.</li>
-            <li><strong>Cloud Hosting:</strong> Hosts and deploys our app infrastructure, ensuring high availability and performance.</li>
-          </ul>
-          <p>Each third-party provider is subject to their own privacy policies and data processing agreements consistent with applicable law.</p>
-        </div>
-
-        <!-- 6 -->
-        <div class="policy-section" id="pp-share">
-          <h3>6. Data Sharing</h3>
-          <p>We do not sell or share your personal data with third parties for marketing purposes. However, we may share your data with:</p>
-          <ul class="policy-list">
-            <li><strong>Service Providers:</strong> Such as our hosting, database, and analytics partners, solely for the purposes outlined in this policy.</li>
-            <li><strong>Public Review Content:</strong> Reviews and photos you submit are visible to other KLEAN users by design. Please do not include sensitive personal details in review text or photos.</li>
-            <li><strong>Legal Authorities:</strong> If required by law or to protect the rights and safety of KLEAN, its users, or the public.</li>
-          </ul>
-        </div>
-
-        <!-- 7 -->
-        <div class="policy-section" id="pp-protection">
-          <h3>7. Data Protection</h3>
-          <p>We implement security measures to protect your personal data, including encryption in transit and at rest, and secure cloud storage through reputable, compliance-focused providers.</p>
-          <div class="highlight-box">
-            ⚠️ No system is entirely secure. While we take reasonable precautions, we cannot guarantee absolute protection against all unauthorized access or data breaches.
-          </div>
-        </div>
-
-        <!-- 8 -->
-        <div class="policy-section" id="pp-rights">
-          <h3>8. User Rights</h3>
-          <p>You have the right to:</p>
-          <ul class="policy-list">
-            <li><strong>Access:</strong> Request a copy of the personal data we hold about you.</li>
-            <li><strong>Correction:</strong> Ask us to correct inaccurate or outdated information.</li>
-            <li><strong>Deletion:</strong> Request deletion of your data, subject to legal or operational obligations.</li>
-            <li><strong>Withdraw Permissions:</strong> Revoke camera or location access at any time via your iPhone's <em>Settings &rarr; Privacy &amp; Security</em>. Revoking location access will disable the nearby restrooms feature.</li>
-          </ul>
-          <p>To exercise any of these rights, contact us using the information in Section 10 below.</p>
-        </div>
-
-        <!-- 9 -->
-        <div class="policy-section" id="pp-changes">
-          <h3>9. Updates to Privacy Policy</h3>
-          <p>We may update this Privacy Policy periodically to reflect changes in our practices or applicable laws. Changes will be posted on this page with a revised "Last Updated" date. We encourage you to review this policy regularly.</p>
-          <p>Your continued use of KLEAN after any update constitutes your acceptance of the revised policy.</p>
-        </div>
-
-        <!-- 10 -->
-        <div class="policy-section" id="pp-contact">
-          <h3>10. Contact Information</h3>
-          <p>If you have any questions or concerns about this Privacy Policy, please contact us:</p>
-          <div class="contact-box">
-            <p><strong style="color:#fff;">KLEAN App &mdash; Privacy Inquiries</strong></p>
-            <p>Email: <a href="mailto:support@kleanwc.com"><span class="__cf_email__">support@kleanwc.com</span></a></p>
-            <p style="margin-top:8px;font-size:0.82rem;">We aim to respond to all privacy-related inquiries within 7 business days.</p>
-          </div>
-        </div>
-
-      </div><!-- /policy-content -->
-    </div><!-- /policy-wrap -->
-  </section>
-
   <!-- FOOTER -->
   <footer>
     <div class="footer-logo">KL<span>E</span>AN</div>
-    <ul class="footer-links"
+    <ul class="footer-links">
+      <li><a href="#features">Features</a></li>
+      <li><a href="privacy_policy.html">Privacy Policy</a></li>
+      <li><a href="terms_of_service.html">Terms of Service</a></li>
+      <li><a href="mailto:support@kleanwc.com">Contact</a></li>
+    </ul>
+    <p class="footer-copy">&copy; 2026 KLEAN WC. All rights reserved.</p>

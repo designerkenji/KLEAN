@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KLEAN WC — Terms of Service</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Epilogue:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --mint:    #00C896;
+      --mint-lt: #e6faf4;
+      --mint-dk: #009e78;
+      --navy:    #0a1628;
+      --slate:   #3a4a60;
+      --mist:    #f4f8f6;
+      --white:   #ffffff;
+      --border:  #d8e8e3;
+      --radius:  14px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Epilogue', sans-serif;
+      background: var(--white);
+      color: var(--navy);
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center;
+      padding: 18px 48px;
+      background: rgba(255,255,255,0.88);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.5rem; font-weight: 800;
+      letter-spacing: -0.04em;
+      color: var(--navy); text-decoration: none;
+    }
+    .nav-logo span { color: var(--mint); }
+
+    /* ── PAGE HERO BANNER ── */
+    .page-banner {
+      padding: 120px 80px 60px;
+      background: var(--navy);
+      position: relative; overflow: hidden;
+    }
+    .page-banner::before {
+      content: '';
+      position: absolute; top: -100px; right: -100px;
+      width: 500px; height: 500px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(0,200,150,0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .page-banner .breadcrumb {
+      font-size: 0.8rem; color: rgba(255,255,255,0.4);
+      margin-bottom: 16px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .page-banner .breadcrumb a {
+      color: var(--mint); text-decoration: none;
+    }
+    .page-banner .breadcrumb a:hover { text-decoration: underline; }
+    .page-banner h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      font-weight: 800; letter-spacing: -0.04em;
+      color: var(--white); line-height: 1.05;
+      margin-bottom: 16px;
+    }
+    .page-banner h1 span { color: var(--mint); }
+    .page-banner p {
+      font-size: 1rem; color: rgba(255,255,255,0.55);
+      max-width: 520px; line-height: 1.6;
+    }
+
+    /* ── MAIN LAYOUT ── */
+    .tos-wrap {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 80px;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 64px 80px 100px;
+    }
+
+    /* ── SIDEBAR ── */
+    .tos-sidebar { position: sticky; top: 90px; height: fit-content; }
+    .tos-sidebar nav { 
+      position: static;
+      display: block;
+      padding: 0; background: none; border: none;
+      backdrop-filter: none;
+    }
+    .tos-sidebar nav ul {
+      list-style: none;
+      display: flex; flex-direction: column; gap: 2px;
+    }
+    .tos-sidebar nav ul a {
+      font-size: 0.85rem; font-weight: 400;
+      color: var(--slate); text-decoration: none;
+      padding: 7px 10px; border-radius: 6px;
+      display: block;
+      transition: background .15s, color .15s;
+    }
+    .tos-sidebar nav ul a:hover { background: var(--mint-lt); color: var(--mint-dk); }
+    .sidebar-divider {
+      height: 1px; background: var(--border);
+      margin: 8px 10px;
+    }
+    .toc-label {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.72rem !important; font-weight: 700 !important;
+      letter-spacing: 0.1em !important; text-transform: uppercase !important;
+      color: var(--mint-dk) !important;
+      padding: 10px 10px 4px !important;
+      pointer-events: none; cursor: default;
+      display: block;
+    }
+
+    /* ── TOS CONTENT ── */
+    .tos-content { max-width: 700px; }
+
+    .tos-intro {
+      background: var(--mint-lt);
+      border-left: 4px solid var(--mint);
+      border-radius: 0 10px 10px 0;
+      padding: 18px 22px;
+      font-size: 0.92rem; line-height: 1.65;
+      color: var(--slate);
+      margin-bottom: 48px;
+    }
+    .tos-meta {
+      font-size: 0.82rem; color: var(--slate);
+      margin-bottom: 32px;
+    }
+    .tos-meta strong { color: var(--navy); }
+
+    .tos-section { margin-bottom: 44px; scroll-margin-top: 90px; }
+    .tos-section h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.2rem; font-weight: 700;
+      color: var(--navy);
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 18px;
+    }
+    .tos-section p {
+      font-size: 0.93rem; line-height: 1.75;
+      color: var(--slate); margin-bottom: 14px;
+    }
+    .tos-section p:last-child { margin-bottom: 0; }
+    .tos-list {
+      list-style: none;
+      display: flex; flex-direction: column; gap: 10px;
+      margin: 10px 0 14px;
+    }
+    .tos-list li {
+      display: flex; gap: 12px; align-items: flex-start;
+      font-size: 0.93rem; line-height: 1.65; color: var(--slate);
+    }
+    .tos-list li::before {
+      content: '→';
+      color: var(--mint); font-weight: 700;
+      flex-shrink: 0; margin-top: 1px;
+    }
+    .highlight-box {
+      background: #fef9ec;
+      border: 1px solid #f0d87a;
+      border-radius: 10px;
+      padding: 16px 20px;
+      font-size: 0.88rem; line-height: 1.65; color: #6b5700;
+      margin: 14px 0;
+    }
+    .contact-box {
+      background: var(--navy);
+      border-radius: var(--radius);
+      padding: 28px 32px;
+      margin-top: 16px;
+    }
+    .contact-box p { color: rgba(255,255,255,0.7) !important; }
+    .contact-box a { color: var(--mint); text-decoration: none; font-weight: 500; }
+    .contact-box a:hover { text-decoration: underline; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy);
+      padding: 52px 80px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .footer-logo {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.4rem; font-weight: 800;
+      color: var(--white); letter-spacing: -0.04em;
+    }
+    .footer-logo span { color: var(--mint); }
+    .footer-links { display: flex; gap: 28px; list-style: none; }
+    .footer-links a {
+      font-size: 0.82rem; color: rgba(255,255,255,0.5);
+      text-decoration: none; transition: color .2s;
+    }
+    .footer-links a:hover { color: var(--mint); }
+    .footer-copy { font-size: 0.78rem; color: rgba(255,255,255,0.35); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      nav { padding: 16px 24px; }
+      .page-banner { padding: 100px 28px 48px; }
+      .tos-wrap { grid-template-columns: 1fr; gap: 40px; padding: 40px 28px 80px; }
+      .tos-sidebar { position: static; }
+      footer { flex-direction: column; gap: 24px; padding: 40px 28px; text-align: center; }
+      .footer-links { flex-wrap: wrap; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a class="nav-logo" href="index.html">KL<span>E</span>AN</a>
+  </nav>
+
+  <!-- PAGE BANNER -->
+  <div class="page-banner">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a> › Terms of Service
+    </div>
+    <h1>Terms of <span>Service</span></h1>
+    <p>Please read these terms carefully before using KLEAN WC. By accessing or using the app, you agree to be bound by them.</p>
+  </div>
+
+  <!-- MAIN -->
+  <div class="tos-wrap">
+
+    <!-- Sidebar -->
+    <aside class="tos-sidebar">
+      <nav>
+        <ul>
+          <li><a href="index.html">↑ Home</a></li>
+          <li><a href="index.html#features">Features</a></li>
+          <li><a href="privacy_policy.html">Privacy Policy</a></li>
+          <li class="sidebar-divider"></li>
+          <li><span class="toc-label">Terms of Service</span></li>
+          <li><a href="#tos-acceptance">1. Acceptance</a></li>
+          <li><a href="#tos-eligibility">2. Eligibility</a></li>
+          <li><a href="#tos-account">3. Accounts</a></li>
+          <li><a href="#tos-use">4. Acceptable Use</a></li>
+          <li><a href="#tos-content">5. User Content</a></li>
+          <li><a href="#tos-ip">6. Intellectual Property</a></li>
+          <li><a href="#tos-privacy">7. Privacy</a></li>
+          <li><a href="#tos-disclaimer">8. Disclaimers</a></li>
+          <li><a href="#tos-liability">9. Limitation of Liability</a></li>
+          <li><a href="#tos-termination">10. Termination</a></li>
+          <li><a href="#tos-changes">11. Changes to Terms</a></li>
+          <li><a href="#tos-law">12. Governing Law</a></li>
+          <li><a href="#tos-contact">13. Contact Us</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Content -->
+    <div class="tos-content">
+
+      <p class="tos-meta">
+        <strong>Last Updated:</strong> April 3, 2026 &nbsp;&middot;&nbsp;
+        <strong>App:</strong> KLEAN WC &mdash; Restroom Reviews
+      </p>
+
+      <div class="tos-intro">
+        These Terms of Service ("Terms") govern your use of the KLEAN WC mobile application and any related services provided by us. By downloading, installing, or using KLEAN WC, you agree to these Terms. If you do not agree, please do not use the app.
+      </div>
+
+      <!-- 1 -->
+      <div class="tos-section" id="tos-acceptance">
+        <h2>1. Acceptance of Terms</h2>
+        <p>By accessing or using KLEAN WC ("the App"), you confirm that you have read, understood, and agree to be bound by these Terms of Service and our <a href="privacy_policy.html" style="color:var(--mint-dk);font-weight:500;">Privacy Policy</a>, which is incorporated herein by reference.</p>
+        <p>If you are using KLEAN WC on behalf of an organization, you represent that you have the authority to bind that organization to these Terms.</p>
+      </div>
+
+      <!-- 2 -->
+      <div class="tos-section" id="tos-eligibility">
+        <h2>2. Eligibility</h2>
+        <p>You must be at least 13 years of age to use KLEAN WC. By using the App, you represent and warrant that you meet this age requirement. If you are under 18, you confirm that you have obtained consent from a parent or legal guardian.</p>
+        <p>KLEAN WC is currently available for use in jurisdictions where it is permitted by applicable law. We make no representation that the App is appropriate or available in all locations.</p>
+      </div>
+
+      <!-- 3 -->
+      <div class="tos-section" id="tos-account">
+        <h2>3. Accounts</h2>
+        <p>Some features of KLEAN WC may require you to create an account. When creating an account, you agree to:</p>
+        <ul class="tos-list">
+          <li>Provide accurate, current, and complete information.</li>
+          <li>Keep your login credentials confidential and not share them with others.</li>
+          <li>Notify us immediately if you suspect unauthorized access to your account.</li>
+          <li>Take responsibility for all activity that occurs under your account.</li>
+        </ul>
+        <p>We reserve the right to suspend or terminate accounts that violate these Terms or that we reasonably believe are being used fraudulently or abusively.</p>
+      </div>
+
+      <!-- 4 -->
+      <div class="tos-section" id="tos-use">
+        <h2>4. Acceptable Use</h2>
+        <p>You agree to use KLEAN WC only for lawful purposes and in a manner that does not infringe the rights of others. You must not:</p>
+        <ul class="tos-list">
+          <li>Submit false, misleading, or fabricated reviews or ratings.</li>
+          <li>Upload content that is obscene, defamatory, harassing, hateful, or otherwise objectionable.</li>
+          <li>Use the App to spam, advertise, or solicit other users.</li>
+          <li>Attempt to reverse-engineer, decompile, or tamper with any part of the App.</li>
+          <li>Use automated scripts, bots, or scrapers to interact with the App.</li>
+          <li>Interfere with or disrupt the integrity or performance of the App or its servers.</li>
+          <li>Violate any applicable local, national, or international law or regulation.</li>
+        </ul>
+        <div class="highlight-box">
+          ⚠️ We reserve the right to remove any content and suspend any account that violates these guidelines, without prior notice.
+        </div>
+      </div>
+
+      <!-- 5 -->
+      <div class="tos-section" id="tos-content">
+        <h2>5. User Content</h2>
+        <p>KLEAN WC allows you to submit reviews, ratings, and photos ("User Content"). You retain ownership of the content you submit. By submitting User Content, you grant KLEAN WC a non-exclusive, worldwide, royalty-free license to use, display, reproduce, and distribute that content within the App and for promotional purposes related to KLEAN WC.</p>
+        <p>You represent and warrant that:</p>
+        <ul class="tos-list">
+          <li>You own or have the necessary rights to the content you submit.</li>
+          <li>Your content does not violate the privacy, intellectual property, or other rights of any third party.</li>
+          <li>Your content is accurate and relates to an actual restroom you have personally visited.</li>
+          <li>Photos you upload do not contain identifiable people without their consent.</li>
+        </ul>
+        <p>We reserve the right to remove any User Content at our sole discretion, particularly content that violates these Terms or that we find inappropriate.</p>
+      </div>
+
+      <!-- 6 -->
+      <div class="tos-section" id="tos-ip">
+        <h2>6. Intellectual Property</h2>
+        <p>All content, design, graphics, software, and other materials that make up KLEAN WC — excluding User Content — are owned by or licensed to us and are protected by applicable intellectual property laws.</p>
+        <p>You may not copy, reproduce, modify, distribute, or create derivative works from any part of KLEAN WC without our express written permission. The KLEAN WC name, logo, and brand elements are our trademarks and may not be used without authorization.</p>
+      </div>
+
+      <!-- 7 -->
+      <div class="tos-section" id="tos-privacy">
+        <h2>7. Privacy</h2>
+        <p>Your use of KLEAN WC is also governed by our <a href="privacy_policy.html" style="color:var(--mint-dk);font-weight:500;">Privacy Policy</a>, which describes how we collect, use, and protect your personal data — including GPS location and camera access. By using the App, you consent to the data practices described in the Privacy Policy.</p>
+      </div>
+
+      <!-- 8 -->
+      <div class="tos-section" id="tos-disclaimer">
+        <h2>8. Disclaimers</h2>
+        <p>KLEAN WC is provided on an "as is" and "as available" basis, without warranties of any kind, either express or implied. We do not warrant that:</p>
+        <ul class="tos-list">
+          <li>The App will be uninterrupted, error-free, or free of viruses or other harmful components.</li>
+          <li>Reviews and ratings submitted by users are accurate, complete, or reliable.</li>
+          <li>Location data will always reflect real-time or precise conditions.</li>
+        </ul>
+        <p>User-generated content reflects the views of individual contributors and not those of KLEAN WC. We are not responsible for the accuracy of any review or the condition of any restroom listed in the App.</p>
+      </div>
+
+      <!-- 9 -->
+      <div class="tos-section" id="tos-liability">
+        <h2>9. Limitation of Liability</h2>
+        <p>To the fullest extent permitted by applicable law, KLEAN WC and its officers, employees, and affiliates shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of — or inability to use — the App, even if we have been advised of the possibility of such damages.</p>
+        <p>Our total liability to you for any claim arising out of or relating to these Terms or the App shall not exceed the amount you paid us (if any) in the twelve months preceding the claim.</p>
+      </div>
+
+      <!-- 10 -->
+      <div class="tos-section" id="tos-termination">
+        <h2>10. Termination</h2>
+        <p>We may suspend or terminate your access to KLEAN WC at any time, with or without notice, if we believe you have violated these Terms or if we decide to discontinue the App or any part of it.</p>
+        <p>You may stop using the App at any time. If you wish to delete your account and associated data, please contact us at the address in Section 13.</p>
+        <p>Upon termination, all licenses granted to you under these Terms will immediately cease. Sections relating to intellectual property, disclaimers, limitation of liability, and governing law will survive termination.</p>
+      </div>
+
+      <!-- 11 -->
+      <div class="tos-section" id="tos-changes">
+        <h2>11. Changes to Terms</h2>
+        <p>We may update these Terms from time to time. When we make material changes, we will update the "Last Updated" date at the top of this page and, where appropriate, notify you through an in-app notice.</p>
+        <p>Your continued use of KLEAN WC after any update constitutes your acceptance of the revised Terms. If you do not agree to the updated Terms, you should stop using the App.</p>
+      </div>
+
+      <!-- 12 -->
+      <div class="tos-section" id="tos-law">
+        <h2>12. Governing Law</h2>
+        <p>These Terms shall be governed by and construed in accordance with the laws of the State of Delaware, United States, without regard to its conflict of law provisions. Any disputes arising under these Terms shall be subject to the exclusive jurisdiction of the courts located in Delaware.</p>
+      </div>
+
+      <!-- 13 -->
+      <div class="tos-section" id="tos-contact">
+        <h2>13. Contact Us</h2>
+        <p>If you have any questions or concerns about these Terms of Service, please contact us:</p>
+        <div class="contact-box">
+          <p><strong style="color:#fff;">KLEAN WC &mdash; Legal Inquiries</strong></p>
+          <p>Email: <a href="/cdn-cgi/l/email-protection#046861636568446f6861656a6574742a676b69"><span class="__cf_email__" data-cfemail="69050c0e08052902050c0807081919470a0604">[email&#160;protected]</span></a></p>
+          <p style="margin-top:8px;font-size:0.82rem;">We aim to respond to all legal inquiries within 7 business days.</p>
+        </div>
+      </div>
+
+    </div><!-- /tos-content -->
+  </div><!-- /tos-wrap -->
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">KL<span>E</span>AN</div>
+    <ul class="footer-links">
+      <li><a href="index.html#features">Features</a></li>
+      <li><a href="privacy_policy.html">Privacy Policy</a></li>
+      <li><a href="terms_of_service.html">Terms of Service</a></li>
+      <li><a href="/cdn-cgi/l/email-
